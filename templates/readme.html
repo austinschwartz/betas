@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>README</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+</head>
+    <body>
+    <div class="container" style="margin-top:50px">
+        <p>Features:</p>
+        <p>
+        <ol>
+            <li>Adj. closing prices from <a href="/avail">500 stocks</a></li>
+            <li>Uses NASDAQ composite as our index, with data from 2004-2018</li>
+            <li>Python library for downloading/querying data custom written</li>
+            <li>Error handling on failed downloads and on querying for missing stocks</li>
+            <li>Plotting supports panning, zooming, muting/hiding stocks, etc (via Bokeh library)</li>
+            <li>Betas calculated on the fly based on cached pricing information</li>
+            <li>Optimized beta calculating. Stress test with 24 stocks: <a href="http://localhost:5001/betas/AAPL,IBM,MSFT,AMZN,FB,AAPL,ABC,AA,ABBV,ACE,AGN,ADP,ADSK,ABT,AEE,ACN,AEP,ADBE,AET,ADI,ADM,ADS,AIV,ADT,ALL/365">here</a></li>
+        </ol>
+        </p>
+        <p>
+        <h4><a href="/betas">Beta Analyzer</a></h4>
+        </p>
+    </div>
+    </body>
+</html>

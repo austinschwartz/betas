@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Stock Betas</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css" rel="stylesheet">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="section hero">
+      <div class="container">
+        <div class="row">
+          <h4 class="hero-heading"><a href="/">Beta Analyzer</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="section hero">
+      <div class="container">
+        Window: {{ window }} days </br>
+        Betas: </br>
+        <ul>
+          {% for stock in betas %}
+          <li> {{ stock }}: {{ '%0.3f'|format(betas[stock])|float }} </li>
+          {% endfor %}
+        </ul>
+        {{ the_div|safe }}
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+        {{ the_script|safe }}
+    </div>
+
+    <div class="section hero" style="margin-top:20px">
+      <div class="container">
+        <form name="frm" method="post" action="/betas">
+        Stocks: <input type="text" name="stock" id="stocksList" placeholder="AAPL,AMZN,MSFT"><br/>
+        Window: <input type="text" name="window" id="window" placeholder="365">
+        <input type="submit" id="btnUpdate" class="buttonUpdate" />
+        </form>
+      </div>
+    </div>
+
+    <div class="section hero" style="margin-top:20px">
+      <div class="container">
+        <footer>
+          <a href="https://austinschwartz.com">Austin Schwartz</a>
+        </footer>
+      </div>
+    </div>
+
+</body>
+</html>

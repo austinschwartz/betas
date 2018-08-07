@@ -1,0 +1,5 @@
+1. `conda env create -f environment.yml`
+2. `export FLASK_APP=__init__.py`
+3. `flask run -p 5001`
+4. Go to localhost:5001
+5. Analyze betas :)
